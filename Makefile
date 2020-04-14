@@ -5,11 +5,11 @@
 ## jedrfh
 ##
 
-SRC	=	src/my_printf.c \
-		src/my_putchar.c \
-		src/my_put_nbr.c \
-		src/my_putstr.c \
-		src/my_strlen.c\
+SRC	=	src/my_printf.c		\
+		src/my_putchar.c	\
+		src/my_put_nbr.c	\
+		src/my_putstr.c		\
+		src/my_strlen.c		\
 		src/operations_printf.c
 
 CPPFLAGS =	-I ./include -Wall -Wextra
@@ -23,10 +23,12 @@ $(NAME):	$(OBJ)
 
 all:	$(NAME)
 
-clean:	make fclean -C lib/my/
+fclean: clean
 	rm -f $(NAME)
-	rm -f libmy.a
 
-re: 	clean all
+clean:
+	rm -f $(OBJ)
+
+re: 	fclean all
 
 .PHONY: all clean fclean

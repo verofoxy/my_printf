@@ -7,8 +7,8 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "../include/bootstrap.h"
-#include "../include/my.h"
+#include "bootstrap.h"
+#include "my.h"
 
 void part_one(va_list ap, char *s, int *i)
 { 
@@ -90,8 +90,7 @@ void part_four(va_list ap, char *s, int *i)
 int my_printf(char *s, ...)
 {
     int *i = malloc(sizeof(int));
-    int idx = my_strlen(s), arg;
-    char *ch2;
+    int idx = my_strlen(s);
     va_list ap;
 
     *i = 0;
